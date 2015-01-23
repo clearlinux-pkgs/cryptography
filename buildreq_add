@@ -1,0 +1,15 @@
+# This file contains additional build requirements that did not get
+# picked up automatically. One name per line, no whitespace.
+cffi
+openssl-dev
+six
+enum34
+pyasn1
+cryptography_vectors-python
+cryptography_vectors
+iso8601-python
+pytest-python
+pretend-python
+py-python
+idna-python
+ipaddress-python
