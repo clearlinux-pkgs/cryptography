@@ -8,7 +8,7 @@ pyasn1
 cryptography_vectors-python
 cryptography_vectors
 iso8601-python
-pytest-python
+pytest
 pretend-python
 py-python
 idna-python

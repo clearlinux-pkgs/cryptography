@@ -4,7 +4,7 @@
 #
 Name     : cryptography
 Version  : 1.0.2
-Release  : 26
+Release  : 27
 URL      : https://pypi.python.org/packages/source/c/cryptography/cryptography-1.0.2.tar.gz
 Source0  : https://pypi.python.org/packages/source/c/cryptography/cryptography-1.0.2.tar.gz
 Summary  : cryptography is a package which provides cryptographic recipes and primitives to Python developers.
@@ -26,11 +26,12 @@ BuildRequires : py-python
 BuildRequires : pyasn1
 BuildRequires : pycparser
 BuildRequires : pycparser-python
-BuildRequires : pytest-python
+BuildRequires : pytest
 BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : setuptools
 BuildRequires : six
+Patch1: drop-limit.patch
 
 %description
 Cryptography
@@ -51,6 +52,7 @@ python components for the cryptography package.
 
 %prep
 %setup -q -n cryptography-1.0.2
+%patch1 -p1
 
 %build
 python2 setup.py build -b py2
