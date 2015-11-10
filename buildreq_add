@@ -13,3 +13,4 @@ pretend-python
 py-python
 idna-python
 ipaddress-python
+pyasn1-modules
