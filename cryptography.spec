@@ -4,7 +4,7 @@
 #
 Name     : cryptography
 Version  : 1.1
-Release  : 28
+Release  : 29
 URL      : https://pypi.python.org/packages/source/c/cryptography/cryptography-1.1.tar.gz
 Source0  : https://pypi.python.org/packages/source/c/cryptography/cryptography-1.1.tar.gz
 Summary  : cryptography is a package which provides cryptographic recipes and primitives to Python developers.
