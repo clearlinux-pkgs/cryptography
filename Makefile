@@ -1,5 +1,5 @@
 PKG_NAME := cryptography
-URL := https://pypi.python.org/packages/source/c/cryptography/cryptography-1.3.1.tar.gz
+URL := http://pypi.debian.net/cryptography/cryptography-1.4.tar.gz
 ARCHIVES :=
 
 include ../common/Makefile.common
