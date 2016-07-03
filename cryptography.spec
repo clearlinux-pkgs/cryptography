@@ -4,7 +4,7 @@
 #
 Name     : cryptography
 Version  : 1.4
-Release  : 39
+Release  : 40
 URL      : http://pypi.debian.net/cryptography/cryptography-1.4.tar.gz
 Source0  : http://pypi.debian.net/cryptography/cryptography-1.4.tar.gz
 Summary  : cryptography is a package which provides cryptographic recipes and primitives to Python developers.
