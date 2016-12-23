@@ -14,3 +14,4 @@ py-python
 idna-python
 ipaddress-python
 pyasn1-modules
+pycparser-python

@@ -4,7 +4,7 @@
 #
 Name     : cryptography
 Version  : 1.5.2
-Release  : 46
+Release  : 47
 URL      : http://pypi.debian.net/cryptography/cryptography-1.5.2.tar.gz
 Source0  : http://pypi.debian.net/cryptography/cryptography-1.5.2.tar.gz
 Summary  : cryptography is a package which provides cryptographic recipes and primitives to Python developers.
@@ -26,7 +26,6 @@ BuildRequires : pretend-python
 BuildRequires : py-python
 BuildRequires : pyasn1
 BuildRequires : pyasn1-modules
-BuildRequires : pycparser
 BuildRequires : pycparser-python
 BuildRequires : pytest
 BuildRequires : python-dev
