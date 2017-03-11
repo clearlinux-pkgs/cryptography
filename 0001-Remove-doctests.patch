@@ -1,0 +1,33 @@
+From 5f68fc505606fb44cff71fe86eb853e1731f780f Mon Sep 17 00:00:00 2001
+From: William Douglas <william.douglas@intel.com>
+Date: Sat, 11 Mar 2017 23:08:25 +0000
+Subject: [PATCH] Remove doctests
+
+Due to doctests pulling in doc8 which we do not want, simply take out
+document tests.
+---
+ setup.py | 8 --------
+ 1 file changed, 8 deletions(-)
+
+diff --git a/setup.py b/setup.py
+index 80df309..35e0106 100644
+--- a/setup.py
++++ b/setup.py
+@@ -311,14 +311,6 @@ setup(
+     tests_require=test_requirements,
+     extras_require={
+         "test": test_requirements,
+-        "docstest": [
+-            "doc8",
+-            "pyenchant",
+-            "readme_renderer >= 16.0",
+-            "sphinx",
+-            "sphinx_rtd_theme",
+-            "sphinxcontrib-spelling",
+-        ],
+         "pep8test": [
+             "flake8",
+             "flake8-import-order",
+-- 
+2.12.0
+

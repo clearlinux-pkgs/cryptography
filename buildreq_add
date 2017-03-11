@@ -1,17 +1,15 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
+asn1crypto-python
 cffi
-openssl-dev
-six
-enum34
-pyasn1
+cffi-python
 cryptography_vectors-python
-cryptography_vectors
-iso8601-python
-pytest
-pretend-python
-py-python
+enum34-python
 idna-python
 ipaddress-python
-pyasn1-modules
-pycparser-python
+iso8601-python
+openssl-dev
+packaging-python
+pretend-python
+pyparsing-python
+pytz-python
