@@ -1,3 +1,10 @@
 # This file contains runtime requirements that get picked up but are
 # undesirable. One entry per line, no whitespace.
 doc8
+Sphinx
+flake8
+iso8601
+hypothesis
+pytest
+pytz
+pretend
