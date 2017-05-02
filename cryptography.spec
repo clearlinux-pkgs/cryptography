@@ -6,7 +6,7 @@
 #
 Name     : cryptography
 Version  : 1.8.1
-Release  : 57
+Release  : 58
 URL      : http://pypi.debian.net/cryptography/cryptography-1.8.1.tar.gz
 Source0  : http://pypi.debian.net/cryptography/cryptography-1.8.1.tar.gz
 Source99 : http://pypi.debian.net/cryptography/cryptography-1.8.1.tar.gz.asc
