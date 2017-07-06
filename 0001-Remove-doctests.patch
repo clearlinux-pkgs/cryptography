@@ -13,7 +13,7 @@ diff --git a/setup.py b/setup.py
 index 80df309..35e0106 100644
 --- a/setup.py
 +++ b/setup.py
-@@ -311,14 +311,6 @@ setup(
+@@ -297,14 +297,6 @@
      tests_require=test_requirements,
      extras_require={
          "test": test_requirements,
@@ -21,13 +21,10 @@ index 80df309..35e0106 100644
 -            "doc8",
 -            "pyenchant",
 -            "readme_renderer >= 16.0",
--            "sphinx",
+-            "sphinx != 1.6.1, != 1.6.2",
 -            "sphinx_rtd_theme",
 -            "sphinxcontrib-spelling",
 -        ],
          "pep8test": [
              "flake8",
              "flake8-import-order",
--- 
-2.12.0
-
