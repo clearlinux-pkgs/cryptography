@@ -2,14 +2,14 @@
 # picked up automatically. One name per line, no whitespace.
 asn1crypto-python
 cffi
-cffi-python
-cryptography_vectors-python
-enum34-python
-idna-python
-ipaddress-python
-iso8601-python
+cffi
+cryptography_vectors
+enum34
+idna
+ipaddress
+iso8601
 openssl-dev
-packaging-python
-pretend-python
-pyparsing-python
-pytz-python
+packaging
+pretend
+pyparsing
+pytz

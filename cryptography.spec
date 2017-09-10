@@ -6,7 +6,7 @@
 #
 Name     : cryptography
 Version  : 2.0.3
-Release  : 66
+Release  : 67
 URL      : http://pypi.debian.net/cryptography/cryptography-2.0.3.tar.gz
 Source0  : http://pypi.debian.net/cryptography/cryptography-2.0.3.tar.gz
 Source99 : http://pypi.debian.net/cryptography/cryptography-2.0.3.tar.gz.asc
@@ -21,22 +21,21 @@ Requires: idna
 Requires: six
 BuildRequires : asn1crypto-python
 BuildRequires : cffi
-BuildRequires : cffi-python
-BuildRequires : cryptography_vectors-python
-BuildRequires : enum34-python
+BuildRequires : cryptography_vectors
+BuildRequires : enum34
 BuildRequires : hypothesis-python
-BuildRequires : idna-python
-BuildRequires : ipaddress-python
-BuildRequires : iso8601-python
+BuildRequires : idna
+BuildRequires : ipaddress
+BuildRequires : iso8601
 BuildRequires : openssl-dev
-BuildRequires : packaging-python
+BuildRequires : packaging
 BuildRequires : pbr
 BuildRequires : pip
-BuildRequires : pretend-python
-BuildRequires : pyparsing-python
+BuildRequires : pretend
+BuildRequires : pyparsing
 BuildRequires : python-dev
 BuildRequires : python3-dev
-BuildRequires : pytz-python
+BuildRequires : pytz
 BuildRequires : setuptools
 
 %description
@@ -67,7 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1505001362
+export SOURCE_DATE_EPOCH=1505003844
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -77,7 +76,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python3.6/site-packages python3 setup.py test
 %install
-export SOURCE_DATE_EPOCH=1505001362
+export SOURCE_DATE_EPOCH=1505003844
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force

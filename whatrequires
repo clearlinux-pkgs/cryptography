@@ -1,5 +1,5 @@
 # This file contains recursive sources that require this package
-ecdsa-0:0.13-25.src
+ecdsa-0:0.13-26.src
 keyring-0:10.4.0-35.src
 ndg_httpsclient-0:0.4.3-18.src
 paramiko-0:2.2.1-28.src
