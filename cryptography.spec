@@ -6,7 +6,7 @@
 #
 Name     : cryptography
 Version  : 2.0.3
-Release  : 68
+Release  : 69
 URL      : http://pypi.debian.net/cryptography/cryptography-2.0.3.tar.gz
 Source0  : http://pypi.debian.net/cryptography/cryptography-2.0.3.tar.gz
 Source99 : http://pypi.debian.net/cryptography/cryptography-2.0.3.tar.gz.asc
@@ -14,13 +14,16 @@ Summary  : cryptography is a package which provides cryptographic recipes and pr
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause
 Requires: cryptography-legacypython
+Requires: cryptography-python3
 Requires: cryptography-python
 Requires: asn1crypto
 Requires: cffi
 Requires: idna
 Requires: six
 BuildRequires : asn1crypto-python
+BuildRequires : attrs-python
 BuildRequires : cffi
+BuildRequires : coverage-python
 BuildRequires : cryptography_vectors
 BuildRequires : enum34
 BuildRequires : hypothesis-python
@@ -53,9 +56,18 @@ legacypython components for the cryptography package.
 Summary: python components for the cryptography package.
 Group: Default
 Requires: cryptography-legacypython
+Requires: cryptography-python3
 
 %description python
 python components for the cryptography package.
+
+
+%package python3
+Summary: python3 components for the cryptography package.
+Group: Default
+
+%description python3
+python3 components for the cryptography package.
 
 
 %prep
@@ -66,7 +78,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1505404798
+export SOURCE_DATE_EPOCH=1506871358
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -76,7 +88,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python3.6/site-packages python3 setup.py test
 %install
-export SOURCE_DATE_EPOCH=1505404798
+export SOURCE_DATE_EPOCH=1506871358
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
@@ -92,5 +104,8 @@ echo ----[ mark ]----
 /usr/lib/python2*/*
 
 %files python
+%defattr(-,root,root,-)
+
+%files python3
 %defattr(-,root,root,-)
 /usr/lib/python3*/*
