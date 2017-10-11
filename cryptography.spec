@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x235AE5F129F9ED98 (paul.l.kehrer@gmail.com)
 #
 Name     : cryptography
-Version  : 2.0.3
-Release  : 70
-URL      : http://pypi.debian.net/cryptography/cryptography-2.0.3.tar.gz
-Source0  : http://pypi.debian.net/cryptography/cryptography-2.0.3.tar.gz
-Source99 : http://pypi.debian.net/cryptography/cryptography-2.0.3.tar.gz.asc
+Version  : 2.1
+Release  : 71
+URL      : http://pypi.debian.net/cryptography/cryptography-2.1.tar.gz
+Source0  : http://pypi.debian.net/cryptography/cryptography-2.1.tar.gz
+Source99 : http://pypi.debian.net/cryptography/cryptography-2.1.tar.gz.asc
 Summary  : cryptography is a package which provides cryptographic recipes and primitives to Python developers.
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause
@@ -18,8 +18,11 @@ Requires: cryptography-python3
 Requires: cryptography-python
 Requires: asn1crypto
 Requires: cffi
+Requires: enum34
 Requires: idna
+Requires: ipaddress
 Requires: six
+BuildRequires : asn1crypto
 BuildRequires : asn1crypto-python
 BuildRequires : attrs-python
 BuildRequires : cffi
@@ -40,6 +43,7 @@ BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : pytz
 BuildRequires : setuptools
+BuildRequires : six
 
 %description
 =================
@@ -73,14 +77,14 @@ python3 components for the cryptography package.
 
 
 %prep
-%setup -q -n cryptography-2.0.3
+%setup -q -n cryptography-2.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1507152739
+export SOURCE_DATE_EPOCH=1507747952
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -90,7 +94,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python3.6/site-packages python3 setup.py test
 %install
-export SOURCE_DATE_EPOCH=1507152739
+export SOURCE_DATE_EPOCH=1507747952
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
