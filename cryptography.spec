@@ -6,7 +6,7 @@
 #
 Name     : cryptography
 Version  : 2.1.1
-Release  : 72
+Release  : 73
 URL      : http://pypi.debian.net/cryptography/cryptography-2.1.1.tar.gz
 Source0  : http://pypi.debian.net/cryptography/cryptography-2.1.1.tar.gz
 Source99 : http://pypi.debian.net/cryptography/cryptography-2.1.1.tar.gz.asc
