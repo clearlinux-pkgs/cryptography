@@ -13,3 +13,6 @@ packaging
 pretend
 pyparsing
 pytz
+hypothesis-python
+asn1crypto-python
+attrs-python
