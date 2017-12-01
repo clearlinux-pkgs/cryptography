@@ -1,0 +1,25 @@
+From 8a8f93aa47fa83de88efaa60be0f6ab51b2ab1d7 Mon Sep 17 00:00:00 2001
+From: William Douglas <william.douglas@intel.com>
+Date: Fri, 1 Dec 2017 19:41:39 +0000
+Subject: [PATCH] Don't try and install the vectors dependency
+
+---
+ setup.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/setup.py b/setup.py
+index c79106f..07c025b 100644
+--- a/setup.py
++++ b/setup.py
+@@ -72,7 +72,7 @@ class PyTest(test):
+             subprocess.check_call(
+                 [sys.executable, "setup.py", "install"], cwd="vectors"
+             )
+-            pkg_resources.get_distribution("cryptography_vectors").activate()
++            # pkg_resources.get_distribution("cryptography_vectors").activate()
+ 
+     def run_tests(self):
+         # Import here because in module scope the eggs are not loaded.
+-- 
+2.15.0
+
