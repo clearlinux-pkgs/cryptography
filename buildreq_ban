@@ -2,3 +2,4 @@
 # undesirable. One entry per line, no whitespace.
 go
 cryptography-vectors-python
+pytest
