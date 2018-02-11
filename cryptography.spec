@@ -6,13 +6,14 @@
 #
 Name     : cryptography
 Version  : 2.1.4
-Release  : 80
+Release  : 81
 URL      : http://pypi.debian.net/cryptography/cryptography-2.1.4.tar.gz
 Source0  : http://pypi.debian.net/cryptography/cryptography-2.1.4.tar.gz
 Source99 : http://pypi.debian.net/cryptography/cryptography-2.1.4.tar.gz.asc
 Summary  : cryptography is a package which provides cryptographic recipes and primitives to Python developers.
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause
+Requires: cryptography-legacypython
 Requires: cryptography-python3
 Requires: cryptography-python
 Requires: asn1crypto
@@ -47,9 +48,19 @@ Patch1: 0002-Don-t-try-and-install-the-vectors-dependency.patch
 %description
 =================
 
+%package legacypython
+Summary: legacypython components for the cryptography package.
+Group: Default
+Requires: python-core
+
+%description legacypython
+legacypython components for the cryptography package.
+
+
 %package python
 Summary: python components for the cryptography package.
 Group: Default
+Requires: cryptography-legacypython
 Requires: cryptography-python3
 
 %description python
@@ -74,18 +85,25 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1517703986
+export SOURCE_DATE_EPOCH=1518381893
+python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
+export SOURCE_DATE_EPOCH=1518381893
 rm -rf %{buildroot}
-python3 -tt setup.py build -b py3 install --root=%{buildroot}
+python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
+python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
+
+%files legacypython
+%defattr(-,root,root,-)
+/usr/lib/python2*/*
 
 %files python
 %defattr(-,root,root,-)
