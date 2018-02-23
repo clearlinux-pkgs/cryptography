@@ -6,28 +6,31 @@
 #
 Name     : cryptography
 Version  : 2.1.4
-Release  : 81
+Release  : 82
 URL      : http://pypi.debian.net/cryptography/cryptography-2.1.4.tar.gz
 Source0  : http://pypi.debian.net/cryptography/cryptography-2.1.4.tar.gz
 Source99 : http://pypi.debian.net/cryptography/cryptography-2.1.4.tar.gz.asc
 Summary  : cryptography is a package which provides cryptographic recipes and primitives to Python developers.
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause
-Requires: cryptography-legacypython
 Requires: cryptography-python3
 Requires: cryptography-python
 Requires: asn1crypto
 Requires: cffi
-Requires: enum34
 Requires: idna
 Requires: ipaddress
 Requires: six
+Requires: sphinx_rtd_theme
 BuildRequires : asn1crypto
+BuildRequires : asn1crypto-legacypython
 BuildRequires : asn1crypto-python
+BuildRequires : attrs-legacypython
 BuildRequires : attrs-python
 BuildRequires : cffi
+BuildRequires : cffi-legacypython
 BuildRequires : cryptography_vectors
 BuildRequires : enum34
+BuildRequires : hypothesis-legacypython
 BuildRequires : hypothesis-python
 BuildRequires : idna
 BuildRequires : ipaddress
@@ -37,6 +40,7 @@ BuildRequires : packaging
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : pretend
+BuildRequires : pycparser-legacypython
 BuildRequires : pyparsing
 BuildRequires : python-dev
 BuildRequires : python3-dev
@@ -60,7 +64,6 @@ legacypython components for the cryptography package.
 %package python
 Summary: python components for the cryptography package.
 Group: Default
-Requires: cryptography-legacypython
 Requires: cryptography-python3
 
 %description python
@@ -85,12 +88,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1518381893
+export SOURCE_DATE_EPOCH=1519401802
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1518381893
+export SOURCE_DATE_EPOCH=1519401802
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force

@@ -15,4 +15,9 @@ pyparsing
 pytz
 hypothesis-python
 asn1crypto-python
+hypothesis-legacypython
+asn1crypto-legacypython
 attrs-python
+attrs-legacypython
+cffi-legacypython
+pycparser-legacypython

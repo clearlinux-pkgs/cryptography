@@ -8,3 +8,4 @@ hypothesis
 pytest
 pytz
 pretend
+enum34
