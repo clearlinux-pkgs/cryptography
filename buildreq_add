@@ -21,3 +21,4 @@ attrs-python
 attrs-legacypython
 cffi-legacypython
 pycparser-legacypython
+setuptools-legacypython
