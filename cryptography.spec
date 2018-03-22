@@ -4,7 +4,7 @@
 #
 Name     : cryptography
 Version  : 2.2.1
-Release  : 83
+Release  : 84
 URL      : https://github.com/pyca/cryptography/archive/2.2.1.tar.gz
 Source0  : https://github.com/pyca/cryptography/archive/2.2.1.tar.gz
 Summary  : No detailed summary available
@@ -14,6 +14,7 @@ Requires: cryptography-legacypython
 Requires: cryptography-python3
 Requires: cryptography-python
 Requires: asn1crypto
+Requires: cffi
 Requires: idna
 Requires: six
 BuildRequires : asn1crypto
@@ -88,12 +89,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521667329
+export SOURCE_DATE_EPOCH=1521739331
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1521667329
+export SOURCE_DATE_EPOCH=1521739331
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
