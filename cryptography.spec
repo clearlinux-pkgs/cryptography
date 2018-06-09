@@ -4,13 +4,12 @@
 #
 Name     : cryptography
 Version  : 2.2.2
-Release  : 88
+Release  : 89
 URL      : https://github.com/pyca/cryptography/archive/2.2.2.tar.gz
 Source0  : https://github.com/pyca/cryptography/archive/2.2.2.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause Python-2.0
-Requires: cryptography-legacypython
 Requires: cryptography-python3
 Requires: cryptography-python
 Requires: asn1crypto
@@ -89,12 +88,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1522355789
+export SOURCE_DATE_EPOCH=1528556297
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1522355789
+export SOURCE_DATE_EPOCH=1528556297
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
