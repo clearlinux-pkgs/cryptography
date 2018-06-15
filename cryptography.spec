@@ -37,7 +37,7 @@ BuildRequires : pip
 BuildRequires : pretend
 BuildRequires : pycparser-legacypython
 BuildRequires : pyparsing
-BuildRequires : python-dev
+
 BuildRequires : python3-dev
 BuildRequires : pytz
 BuildRequires : setuptools
