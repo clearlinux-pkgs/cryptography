@@ -4,13 +4,14 @@
 #
 Name     : cryptography
 Version  : 2.2.2
-Release  : 92
+Release  : 93
 URL      : https://github.com/pyca/cryptography/archive/2.2.2.tar.gz
 Source0  : https://github.com/pyca/cryptography/archive/2.2.2.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause Python-2.0
 Requires: cryptography-python3
+Requires: cryptography-license
 Requires: cryptography-python
 Requires: asn1crypto
 Requires: cffi
@@ -37,7 +38,7 @@ BuildRequires : pip
 BuildRequires : pretend
 BuildRequires : pycparser-legacypython
 BuildRequires : pyparsing
-
+BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : pytz
 BuildRequires : setuptools
@@ -59,6 +60,14 @@ Requires: python-core
 
 %description legacypython
 legacypython components for the cryptography package.
+
+
+%package license
+Summary: license components for the cryptography package.
+Group: Default
+
+%description license
+license components for the cryptography package.
 
 
 %package python
@@ -88,13 +97,19 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1528556297
+export SOURCE_DATE_EPOCH=1530340222
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1528556297
+export SOURCE_DATE_EPOCH=1530340222
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/cryptography
+cp LICENSE.PSF %{buildroot}/usr/share/doc/cryptography/LICENSE.PSF
+cp LICENSE.BSD %{buildroot}/usr/share/doc/cryptography/LICENSE.BSD
+cp LICENSE.APACHE %{buildroot}/usr/share/doc/cryptography/LICENSE.APACHE
+cp vectors/LICENSE.BSD %{buildroot}/usr/share/doc/cryptography/vectors_LICENSE.BSD
+cp vectors/LICENSE.APACHE %{buildroot}/usr/share/doc/cryptography/vectors_LICENSE.APACHE
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 echo ----[ mark ]----
@@ -107,6 +122,14 @@ echo ----[ mark ]----
 %files legacypython
 %defattr(-,root,root,-)
 /usr/lib/python2*/*
+
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/cryptography/LICENSE.APACHE
+/usr/share/doc/cryptography/LICENSE.BSD
+/usr/share/doc/cryptography/LICENSE.PSF
+/usr/share/doc/cryptography/vectors_LICENSE.APACHE
+/usr/share/doc/cryptography/vectors_LICENSE.BSD
 
 %files python
 %defattr(-,root,root,-)
