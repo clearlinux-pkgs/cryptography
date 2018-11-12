@@ -1,8 +1,11 @@
 # This file contains recursive sources that require this package
+PyMySQL
 acme
 certbot
 josepy
 paramiko
 pyOpenSSL
-secretstorage
+pysaml2
+requests-kerberos
+requests-ntlm
 urllib3
