@@ -4,7 +4,7 @@
 #
 Name     : cryptography
 Version  : 2.4.1
-Release  : 101
+Release  : 102
 URL      : https://github.com/pyca/cryptography/archive/2.4.1.tar.gz
 Source0  : https://github.com/pyca/cryptography/archive/2.4.1.tar.gz
 Summary  : No detailed summary available
@@ -96,12 +96,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1542045073
+export SOURCE_DATE_EPOCH=1542392178
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1542045073
+export SOURCE_DATE_EPOCH=1542392178
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/cryptography
 cp LICENSE.APACHE %{buildroot}/usr/share/package-licenses/cryptography/LICENSE.APACHE
