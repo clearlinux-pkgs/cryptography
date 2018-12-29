@@ -4,7 +4,7 @@
 #
 Name     : cryptography
 Version  : 2.4.2
-Release  : 104
+Release  : 105
 URL      : https://github.com/pyca/cryptography/archive/2.4.2.tar.gz
 Source0  : https://github.com/pyca/cryptography/archive/2.4.2.tar.gz
 Summary  : No detailed summary available
