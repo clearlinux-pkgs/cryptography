@@ -17,9 +17,9 @@ pytz
 hypothesis-python
 asn1crypto-python
 hypothesis-legacypython
-asn1crypto-legacypython
+deprecated-asn1crypto-legacypython
 attrs-python
-attrs-legacypython
-cffi-legacypython
+deprecated-attrs-legacypython
+deprecated-cffi-legacypython
 pycparser-legacypython
 setuptools-legacypython

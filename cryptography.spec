@@ -4,7 +4,7 @@
 #
 Name     : cryptography
 Version  : 2.5
-Release  : 109
+Release  : 110
 URL      : https://github.com/pyca/cryptography/archive/2.5.tar.gz
 Source0  : https://github.com/pyca/cryptography/archive/2.5.tar.gz
 Summary  : No detailed summary available
@@ -17,16 +17,15 @@ Requires: asn1crypto
 Requires: cffi
 Requires: six
 BuildRequires : asn1crypto
-BuildRequires : asn1crypto-legacypython
 BuildRequires : asn1crypto-python
-BuildRequires : attrs-legacypython
 BuildRequires : attrs-python
-BuildRequires : buildreq-distutils23
 BuildRequires : buildreq-distutils3
 BuildRequires : buildreq-golang
 BuildRequires : cffi
-BuildRequires : cffi-legacypython
 BuildRequires : cryptography_vectors
+BuildRequires : deprecated-asn1crypto-legacypython
+BuildRequires : deprecated-attrs-legacypython
+BuildRequires : deprecated-cffi-legacypython
 BuildRequires : enum34
 BuildRequires : hypothesis-legacypython
 BuildRequires : hypothesis-python
@@ -58,15 +57,6 @@ it is encrypted with AES-256 with the password "123456".
 7. dsa_private_key.pem - Contains a DSA 2048 bit key generated using OpenSSL from the parameters in
 dsaparam.pem, protected by the secret "123456" with DES3 encryption.
 8. dsa_public_key.pem - Contains a DSA 2048 bit key generated using OpenSSL from dsa_private_key.pem.
-
-%package legacypython
-Summary: legacypython components for the cryptography package.
-Group: Default
-Requires: python-core
-
-%description legacypython
-legacypython components for the cryptography package.
-
 
 %package license
 Summary: license components for the cryptography package.
@@ -103,12 +93,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1548207778
-python2 setup.py build -b py2
-python3 setup.py build -b py3
+export SOURCE_DATE_EPOCH=1554309812
+export MAKEFLAGS=%{?_smp_mflags}
+python3 setup.py build
 
 %install
-export SOURCE_DATE_EPOCH=1548207778
+export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/cryptography
 cp LICENSE.APACHE %{buildroot}/usr/share/package-licenses/cryptography/LICENSE.APACHE
@@ -116,18 +106,13 @@ cp LICENSE.BSD %{buildroot}/usr/share/package-licenses/cryptography/LICENSE.BSD
 cp LICENSE.PSF %{buildroot}/usr/share/package-licenses/cryptography/LICENSE.PSF
 cp vectors/LICENSE.APACHE %{buildroot}/usr/share/package-licenses/cryptography/vectors_LICENSE.APACHE
 cp vectors/LICENSE.BSD %{buildroot}/usr/share/package-licenses/cryptography/vectors_LICENSE.BSD
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
-
-%files legacypython
-%defattr(-,root,root,-)
-/usr/lib/python2*/*
 
 %files license
 %defattr(0644,root,root,0755)
