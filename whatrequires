@@ -4,6 +4,8 @@ acme
 adal
 azure-storage-common
 certbot
+deprecated-pyOpenSSL
+deprecated-urllib3
 josepy
 paramiko
 pyOpenSSL

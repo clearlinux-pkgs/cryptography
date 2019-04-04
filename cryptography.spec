@@ -4,7 +4,7 @@
 #
 Name     : cryptography
 Version  : 2.5
-Release  : 110
+Release  : 111
 URL      : https://github.com/pyca/cryptography/archive/2.5.tar.gz
 Source0  : https://github.com/pyca/cryptography/archive/2.5.tar.gz
 Summary  : No detailed summary available
@@ -23,11 +23,7 @@ BuildRequires : buildreq-distutils3
 BuildRequires : buildreq-golang
 BuildRequires : cffi
 BuildRequires : cryptography_vectors
-BuildRequires : deprecated-asn1crypto-legacypython
-BuildRequires : deprecated-attrs-legacypython
-BuildRequires : deprecated-cffi-legacypython
 BuildRequires : enum34
-BuildRequires : hypothesis-legacypython
 BuildRequires : hypothesis-python
 BuildRequires : idna
 BuildRequires : ipaddress
@@ -35,11 +31,9 @@ BuildRequires : iso8601
 BuildRequires : openssl-dev
 BuildRequires : packaging
 BuildRequires : pretend
-BuildRequires : pycparser-legacypython
 BuildRequires : pyparsing
 BuildRequires : python-dev
 BuildRequires : pytz
-BuildRequires : setuptools-legacypython
 BuildRequires : six
 Patch1: 0002-Don-t-try-and-install-the-vectors-dependency.patch
 
@@ -93,7 +87,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1554309812
+export SOURCE_DATE_EPOCH=1554342182
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
