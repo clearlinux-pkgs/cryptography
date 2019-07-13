@@ -4,7 +4,7 @@
 #
 Name     : cryptography
 Version  : 2.6.1
-Release  : 113
+Release  : 114
 URL      : https://github.com/pyca/cryptography/archive/2.6.1/cryptography-2.6.1.tar.gz
 Source0  : https://github.com/pyca/cryptography/archive/2.6.1/cryptography-2.6.1.tar.gz
 Summary  : No detailed summary available
