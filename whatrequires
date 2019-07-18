@@ -1,12 +1,25 @@
 # This file contains recursive sources that require this package
 PyMySQL
+SQLAlchemy-Utils
 acme
 adal
+ansible
 azure-storage-common
+barbican
+castellan
 certbot
+cinder
+conda
 deprecated-pyOpenSSL
 deprecated-urllib3
+dns-lexicon
+glance
 josepy
+koji
+mercurial
+nova
+oauthlib
+openstacksdk
 paramiko
 pyOpenSSL
 pysaml2
