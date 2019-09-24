@@ -4,7 +4,7 @@
 #
 Name     : cryptography
 Version  : 2.7
-Release  : 115
+Release  : 116
 URL      : https://github.com/pyca/cryptography/archive/2.7/cryptography-2.7.tar.gz
 Source0  : https://github.com/pyca/cryptography/archive/2.7/cryptography-2.7.tar.gz
 Summary  : No detailed summary available
@@ -32,7 +32,6 @@ BuildRequires : openssl-dev
 BuildRequires : packaging
 BuildRequires : pretend
 BuildRequires : pyparsing
-BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : pytz
 BuildRequires : six
@@ -78,7 +77,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1563471165
+export SOURCE_DATE_EPOCH=1569349373
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "

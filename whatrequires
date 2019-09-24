@@ -15,6 +15,7 @@ deprecated-urllib3
 dns-lexicon
 glance
 josepy
+keystone
 koji
 mercurial
 nova
@@ -23,6 +24,7 @@ openstacksdk
 paramiko
 pyOpenSSL
 pysaml2
+python-magnumclient
 requests-kerberos
 requests-ntlm
 urllib3

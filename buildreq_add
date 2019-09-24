@@ -12,7 +12,6 @@ openssl-dev
 packaging
 pretend
 pyparsing
-python-dev
 pytz
 hypothesis-python
 asn1crypto-python
