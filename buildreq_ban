@@ -2,5 +2,6 @@
 # undesirable. One entry per line, no whitespace.
 go
 cryptography-vectors-python
+enum34
 pkg_resources-python
 pytest

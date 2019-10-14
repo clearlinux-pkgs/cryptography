@@ -4,7 +4,7 @@
 #
 Name     : cryptography
 Version  : 2.7
-Release  : 116
+Release  : 117
 URL      : https://github.com/pyca/cryptography/archive/2.7/cryptography-2.7.tar.gz
 Source0  : https://github.com/pyca/cryptography/archive/2.7/cryptography-2.7.tar.gz
 Summary  : No detailed summary available
@@ -23,7 +23,6 @@ BuildRequires : buildreq-distutils3
 BuildRequires : buildreq-golang
 BuildRequires : cffi
 BuildRequires : cryptography_vectors
-BuildRequires : enum34
 BuildRequires : hypothesis-python
 BuildRequires : idna
 BuildRequires : ipaddress
@@ -77,7 +76,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569349373
+export SOURCE_DATE_EPOCH=1571077683
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -90,11 +89,11 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/cryptography
-cp LICENSE.APACHE %{buildroot}/usr/share/package-licenses/cryptography/LICENSE.APACHE
-cp LICENSE.BSD %{buildroot}/usr/share/package-licenses/cryptography/LICENSE.BSD
-cp LICENSE.PSF %{buildroot}/usr/share/package-licenses/cryptography/LICENSE.PSF
-cp vectors/LICENSE.APACHE %{buildroot}/usr/share/package-licenses/cryptography/vectors_LICENSE.APACHE
-cp vectors/LICENSE.BSD %{buildroot}/usr/share/package-licenses/cryptography/vectors_LICENSE.BSD
+cp %{_builddir}/cryptography-2.7/LICENSE.APACHE %{buildroot}/usr/share/package-licenses/cryptography/de33ead2bee64352544ce0aa9e410c0c44fdf7d9
+cp %{_builddir}/cryptography-2.7/LICENSE.BSD %{buildroot}/usr/share/package-licenses/cryptography/ea5b412c09f3b29ba1d81a61b878c5c16ffe69d8
+cp %{_builddir}/cryptography-2.7/LICENSE.PSF %{buildroot}/usr/share/package-licenses/cryptography/acf6b1628b04fe43a99071223cdbd7b66691c264
+cp %{_builddir}/cryptography-2.7/vectors/LICENSE.APACHE %{buildroot}/usr/share/package-licenses/cryptography/de33ead2bee64352544ce0aa9e410c0c44fdf7d9
+cp %{_builddir}/cryptography-2.7/vectors/LICENSE.BSD %{buildroot}/usr/share/package-licenses/cryptography/ea5b412c09f3b29ba1d81a61b878c5c16ffe69d8
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -105,11 +104,9 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/cryptography/LICENSE.APACHE
-/usr/share/package-licenses/cryptography/LICENSE.BSD
-/usr/share/package-licenses/cryptography/LICENSE.PSF
-/usr/share/package-licenses/cryptography/vectors_LICENSE.APACHE
-/usr/share/package-licenses/cryptography/vectors_LICENSE.BSD
+/usr/share/package-licenses/cryptography/acf6b1628b04fe43a99071223cdbd7b66691c264
+/usr/share/package-licenses/cryptography/de33ead2bee64352544ce0aa9e410c0c44fdf7d9
+/usr/share/package-licenses/cryptography/ea5b412c09f3b29ba1d81a61b878c5c16ffe69d8
 
 %files python
 %defattr(-,root,root,-)

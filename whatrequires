@@ -10,13 +10,10 @@ castellan
 certbot
 cinder
 conda
-deprecated-pyOpenSSL
-deprecated-urllib3
 dns-lexicon
 glance
 josepy
 keystone
-koji
 mercurial
 nova
 oauthlib

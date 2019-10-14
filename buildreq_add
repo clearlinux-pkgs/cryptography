@@ -4,7 +4,6 @@ asn1crypto-python
 cffi
 cffi
 cryptography_vectors
-enum34
 idna
 ipaddress
 iso8601
