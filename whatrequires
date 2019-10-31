@@ -11,6 +11,7 @@ certbot
 cinder
 conda
 dns-lexicon
+docker-py
 glance
 josepy
 keystone
