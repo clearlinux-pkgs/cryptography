@@ -4,7 +4,7 @@
 #
 Name     : cryptography
 Version  : 2.8
-Release  : 118
+Release  : 119
 URL      : https://github.com/pyca/cryptography/archive/2.8/cryptography-2.8.tar.gz
 Source0  : https://github.com/pyca/cryptography/archive/2.8/cryptography-2.8.tar.gz
 Summary  : No detailed summary available
