@@ -1,4 +1,5 @@
 # This file contains recursive sources that require this package
+PyJWT
 PyMySQL
 SQLAlchemy-Utils
 acme
@@ -20,9 +21,14 @@ nova
 oauthlib
 openstacksdk
 paramiko
+passlib
 pyOpenSSL
 pysaml2
 python-magnumclient
 requests-kerberos
 requests-ntlm
+secretstorage
+snitun
+swift
+trustme
 urllib3

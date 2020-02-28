@@ -4,10 +4,10 @@
 #
 Name     : cryptography
 Version  : 2.8
-Release  : 121
+Release  : 122
 URL      : https://github.com/pyca/cryptography/archive/2.8/cryptography-2.8.tar.gz
 Source0  : https://github.com/pyca/cryptography/archive/2.8/cryptography-2.8.tar.gz
-Summary  : No detailed summary available
+Summary  : cryptography is a package which provides cryptographic recipes and primitives to Python developers.
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause Python-2.0
 Requires: cryptography-license = %{version}-%{release}
@@ -35,11 +35,19 @@ BuildRequires : six
 BuildRequires : util-linux
 
 %description
-pyca/cryptography
-=================
-.. image:: https://img.shields.io/pypi/v/cryptography.svg
-:target: https://pypi.org/project/cryptography/
-:alt: Latest Version
+Example test files for PEM Serialization Backend tests
+Contains
+1. ec_private_key.pem - Contains an Elliptic Curve key generated using OpenSSL, from the curve secp256r1.
+2. ec_private_key_encrypted.pem - Contains the same Elliptic Curve key as ec_private_key.pem, except that
+it is encrypted with AES-256 with the password "123456".
+3. ec_public_key.pem - Contains the public key corresponding to ec_private_key.pem, generated using OpenSSL.
+4. rsa_private_key.pem - Contains an RSA 2048 bit key generated using OpenSSL, protected by the secret
+"123456" with DES3 encryption.
+5. rsa_public_key.pem - Contains an RSA 2048 bit public generated using OpenSSL from rsa_private_key.pem.
+6. dsaparam.pem - Contains 2048-bit DSA parameters generated using OpenSSL; contains no keys.
+7. dsa_private_key.pem - Contains a DSA 2048 bit key generated using OpenSSL from the parameters in
+dsaparam.pem, protected by the secret "123456" with DES3 encryption.
+8. dsa_public_key.pem - Contains a DSA 2048 bit key generated using OpenSSL from dsa_private_key.pem.
 
 %package license
 Summary: license components for the cryptography package.
@@ -62,6 +70,7 @@ python components for the cryptography package.
 Summary: python3 components for the cryptography package.
 Group: Default
 Requires: python3-core
+Provides: pypi(cryptography)
 
 %description python3
 python3 components for the cryptography package.
@@ -76,7 +85,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1572534506
+export SOURCE_DATE_EPOCH=1582914347
+# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
