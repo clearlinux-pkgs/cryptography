@@ -4,7 +4,7 @@
 #
 Name     : cryptography
 Version  : 2.9.2
-Release  : 124
+Release  : 125
 URL      : https://github.com/pyca/cryptography/archive/2.9.2/cryptography-2.9.2.tar.gz
 Source0  : https://github.com/pyca/cryptography/archive/2.9.2/cryptography-2.9.2.tar.gz
 Summary  : cryptography is a package which provides cryptographic recipes and primitives to Python developers.
@@ -23,7 +23,6 @@ BuildRequires : cffi
 BuildRequires : cryptography_vectors
 BuildRequires : hypothesis-python
 BuildRequires : idna
-BuildRequires : ipaddress
 BuildRequires : iso8601
 BuildRequires : openssl-dev
 BuildRequires : packaging
@@ -78,7 +77,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1588189953
+export SOURCE_DATE_EPOCH=1588358278
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "

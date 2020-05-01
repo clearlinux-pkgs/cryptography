@@ -5,7 +5,6 @@ cffi
 cffi
 cryptography_vectors
 idna
-ipaddress
 iso8601
 openssl-dev
 packaging
