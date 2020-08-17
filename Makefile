@@ -1,5 +1,5 @@
 PKG_NAME := cryptography
-URL = https://github.com/pyca/cryptography/archive/2.9.2/cryptography-2.9.2.tar.gz
+URL = https://github.com/pyca/cryptography/archive/3.0/cryptography-3.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
