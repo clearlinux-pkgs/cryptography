@@ -1,11 +1,11 @@
 # This file contains runtime requirements that get picked up but are
 # undesirable. One entry per line, no whitespace.
-doc8
 Sphinx
+doc8
+enum34
 flake8
-iso8601
 hypothesis
+iso8601
+pretend
 pytest
 pytz
-pretend
-enum34

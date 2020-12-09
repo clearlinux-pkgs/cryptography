@@ -1,9 +1,10 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
 asn1crypto-python
-cffi
+attrs-python
 cffi
 cryptography_vectors
+hypothesis-python
 idna
 iso8601
 openssl-dev
@@ -11,6 +12,3 @@ packaging
 pretend
 pyparsing
 pytz
-hypothesis-python
-asn1crypto-python
-attrs-python

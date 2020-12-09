@@ -14,7 +14,9 @@ certbot
 conda
 docker-py
 home-assistant
+iasimage
 josepy
+lutris
 mercurial
 oauthlib
 paramiko
