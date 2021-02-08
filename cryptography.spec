@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x235AE5F129F9ED98 (paul.l.kehrer@gmail.com)
 #
 Name     : cryptography
-Version  : 3.3.1
-Release  : 135
-URL      : https://files.pythonhosted.org/packages/b7/82/f7a4ddc1af185936c1e4fa000942ffa8fb2d98cff26b75afa7b3c63391c4/cryptography-3.3.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/b7/82/f7a4ddc1af185936c1e4fa000942ffa8fb2d98cff26b75afa7b3c63391c4/cryptography-3.3.1.tar.gz
-Source1  : https://files.pythonhosted.org/packages/b7/82/f7a4ddc1af185936c1e4fa000942ffa8fb2d98cff26b75afa7b3c63391c4/cryptography-3.3.1.tar.gz.asc
+Version  : 3.3.2
+Release  : 136
+URL      : https://files.pythonhosted.org/packages/d4/85/38715448253404186029c575d559879912eb8a1c5d16ad9f25d35f7c4f4c/cryptography-3.3.2.tar.gz
+Source0  : https://files.pythonhosted.org/packages/d4/85/38715448253404186029c575d559879912eb8a1c5d16ad9f25d35f7c4f4c/cryptography-3.3.2.tar.gz
+Source1  : https://files.pythonhosted.org/packages/d4/85/38715448253404186029c575d559879912eb8a1c5d16ad9f25d35f7c4f4c/cryptography-3.3.2.tar.gz.asc
 Summary  : cryptography is a package which provides cryptographic recipes and primitives to Python developers.
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause Python-2.0
@@ -67,15 +67,15 @@ python3 components for the cryptography package.
 
 
 %prep
-%setup -q -n cryptography-3.3.1
-cd %{_builddir}/cryptography-3.3.1
+%setup -q -n cryptography-3.3.2
+cd %{_builddir}/cryptography-3.3.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1607570521
+export SOURCE_DATE_EPOCH=1612827229
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -88,9 +88,9 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/cryptography
-cp %{_builddir}/cryptography-3.3.1/LICENSE.APACHE %{buildroot}/usr/share/package-licenses/cryptography/de33ead2bee64352544ce0aa9e410c0c44fdf7d9
-cp %{_builddir}/cryptography-3.3.1/LICENSE.BSD %{buildroot}/usr/share/package-licenses/cryptography/ea5b412c09f3b29ba1d81a61b878c5c16ffe69d8
-cp %{_builddir}/cryptography-3.3.1/LICENSE.PSF %{buildroot}/usr/share/package-licenses/cryptography/acf6b1628b04fe43a99071223cdbd7b66691c264
+cp %{_builddir}/cryptography-3.3.2/LICENSE.APACHE %{buildroot}/usr/share/package-licenses/cryptography/de33ead2bee64352544ce0aa9e410c0c44fdf7d9
+cp %{_builddir}/cryptography-3.3.2/LICENSE.BSD %{buildroot}/usr/share/package-licenses/cryptography/ea5b412c09f3b29ba1d81a61b878c5c16ffe69d8
+cp %{_builddir}/cryptography-3.3.2/LICENSE.PSF %{buildroot}/usr/share/package-licenses/cryptography/acf6b1628b04fe43a99071223cdbd7b66691c264
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :

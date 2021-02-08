@@ -5,11 +5,6 @@ PyMySQL
 acme
 adal
 ansible
-azure-cli
-azure-keyvault-keys
-azure-multiapi-storage
-azure-storage-blob
-azure-storage-common
 certbot
 conda
 docker-py
