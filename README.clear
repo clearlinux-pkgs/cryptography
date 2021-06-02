@@ -1,1 +1,11 @@
 Upgrade cryptography_vectors first.
+
+Create vendored dependencies for an offline build by updating the
+projects/cryptography-vendor repository. In cryptography-vendor, run `make
+VER="<Ver>"` to automate most of the process, where <Ver> is the upstream
+cryptography version.
+
+If a hotfix cryptography-vendor release is ever needed, extend the release
+version with a 4th number. For example, a hotfix release for
+cryptography-vendor 3.4.7 would have version "3.4.7.1", a second hotfix release
+would be "3.4.7.2", etc.
