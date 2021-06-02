@@ -12,3 +12,6 @@ packaging
 pretend
 pyparsing
 pytz
+rust-std32
+rustc
+setuptools-rust
