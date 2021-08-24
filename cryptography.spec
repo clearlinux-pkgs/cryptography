@@ -5,12 +5,12 @@
 # Source0 file verified with key 0x235AE5F129F9ED98 (paul.l.kehrer@gmail.com)
 #
 Name     : cryptography
-Version  : 3.4.7
-Release  : 142
-URL      : https://files.pythonhosted.org/packages/9b/77/461087a514d2e8ece1c975d8216bc03f7048e6090c5166bc34115afdaa53/cryptography-3.4.7.tar.gz
-Source0  : https://files.pythonhosted.org/packages/9b/77/461087a514d2e8ece1c975d8216bc03f7048e6090c5166bc34115afdaa53/cryptography-3.4.7.tar.gz
+Version  : 3.4.8
+Release  : 143
+URL      : https://files.pythonhosted.org/packages/cc/98/8a258ab4787e6f835d350639792527d2eb7946ff9fc0caca9c3f4cf5dcfe/cryptography-3.4.8.tar.gz
+Source0  : https://files.pythonhosted.org/packages/cc/98/8a258ab4787e6f835d350639792527d2eb7946ff9fc0caca9c3f4cf5dcfe/cryptography-3.4.8.tar.gz
 Source1  : http://localhost/cgit/projects/cryptography-vendor/snapshot/cryptography-vendor-3.4.7.tar.xz
-Source2  : https://files.pythonhosted.org/packages/9b/77/461087a514d2e8ece1c975d8216bc03f7048e6090c5166bc34115afdaa53/cryptography-3.4.7.tar.gz.asc
+Source2  : https://files.pythonhosted.org/packages/cc/98/8a258ab4787e6f835d350639792527d2eb7946ff9fc0caca9c3f4cf5dcfe/cryptography-3.4.8.tar.gz.asc
 Summary  : cryptography is a package which provides cryptographic recipes and primitives to Python developers.
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause MIT Python-2.0
@@ -69,12 +69,12 @@ python3 components for the cryptography package.
 
 
 %prep
-%setup -q -n cryptography-3.4.7
+%setup -q -n cryptography-3.4.8
 cd %{_builddir}
 tar xf %{_sourcedir}/cryptography-vendor-3.4.7.tar.xz
-cd %{_builddir}/cryptography-3.4.7
+cd %{_builddir}/cryptography-3.4.8
 mkdir -p ./
-cp -r %{_builddir}/cryptography-vendor-3.4.7/* %{_builddir}/cryptography-3.4.7/./
+cp -r %{_builddir}/cryptography-vendor-3.4.7/* %{_builddir}/cryptography-3.4.8/./
 
 %build
 ## build_prepend content
@@ -92,7 +92,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1622659280
+export SOURCE_DATE_EPOCH=1629844643
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -105,9 +105,9 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/cryptography
-cp %{_builddir}/cryptography-3.4.7/LICENSE.APACHE %{buildroot}/usr/share/package-licenses/cryptography/de33ead2bee64352544ce0aa9e410c0c44fdf7d9
-cp %{_builddir}/cryptography-3.4.7/LICENSE.BSD %{buildroot}/usr/share/package-licenses/cryptography/ea5b412c09f3b29ba1d81a61b878c5c16ffe69d8
-cp %{_builddir}/cryptography-3.4.7/LICENSE.PSF %{buildroot}/usr/share/package-licenses/cryptography/acf6b1628b04fe43a99071223cdbd7b66691c264
+cp %{_builddir}/cryptography-3.4.8/LICENSE.APACHE %{buildroot}/usr/share/package-licenses/cryptography/de33ead2bee64352544ce0aa9e410c0c44fdf7d9
+cp %{_builddir}/cryptography-3.4.8/LICENSE.BSD %{buildroot}/usr/share/package-licenses/cryptography/ea5b412c09f3b29ba1d81a61b878c5c16ffe69d8
+cp %{_builddir}/cryptography-3.4.8/LICENSE.PSF %{buildroot}/usr/share/package-licenses/cryptography/acf6b1628b04fe43a99071223cdbd7b66691c264
 cp %{_builddir}/cryptography-vendor-3.4.7/vendor/bitflags/LICENSE-APACHE %{buildroot}/usr/share/package-licenses/cryptography/5798832c31663cedc1618d18544d445da0295229
 cp %{_builddir}/cryptography-vendor-3.4.7/vendor/bitflags/LICENSE-MIT %{buildroot}/usr/share/package-licenses/cryptography/9f3c36d2b7d381d9cf382a00166f3fbd06783636
 cp %{_builddir}/cryptography-vendor-3.4.7/vendor/cfg-if/LICENSE-APACHE %{buildroot}/usr/share/package-licenses/cryptography/5798832c31663cedc1618d18544d445da0295229
