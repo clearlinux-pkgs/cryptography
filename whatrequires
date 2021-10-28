@@ -5,6 +5,7 @@ PyMySQL
 acme
 adal
 ansible
+ansible-core
 certbot
 conda
 dnspython
